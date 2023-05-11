@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+}
+.main-container {
+  padding: 24px;
+}
+.searcher-container {
+  padding: 8px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.searcher-container > span {
+  width: 50%;
+}
+
+.searcher-container button {
+  background-color: rgb(228, 50, 163);
+}
+
+.searcher-container input:focus {
+  border-color:  rgb(228, 50, 163) !important;
+}
+
+.searcher-container p {
+  color: rgb(228, 50, 163);
+  font-size: 24px;
+}
