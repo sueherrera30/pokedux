@@ -1,20 +1,19 @@
 
 import { Row, Col } from 'antd';
-
 import PokemonCard from './PokemonCard';
 
+const PokemonsList = ({pokemons }) => {
 
-const PokemonsList = ({ pokemons }) => (
-   <Row gutter={[16, 16]}>
+   return (<Row gutter={[16, 16]}>
       {
          pokemons.map((pokemon) => {
             return (
-               <Col span={6}><PokemonCard/></Col>
+               <Col key={pokemon.name} span={6} ><PokemonCard name={pokemon.name} /></Col>
             )
          })      
       }
    </Row>
-);
+)};
 
 PokemonsList.defaultProps = {
    pokemons: Array(10).fill('hello')
