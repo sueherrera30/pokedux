@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { setPokemons as setPokemonsActions } from './actions';
@@ -14,8 +14,8 @@ const mapDispatchToProps = (dispatch) => ({
    setPokemons: (value) => dispatch(setPokemonsActions(value)),
 });
 
-function App() {
-  const [pokemons, setPokemons] = useState(null);
+function App({ pokemons, setPokemons }) {
+
 
   useEffect(() => {
      const fetchData = async () => {
@@ -23,7 +23,9 @@ function App() {
         setPokemons(pokeRes);
      }
      fetchData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
+
   return (
     <div className="App">
       <div className='searcher-container'>
